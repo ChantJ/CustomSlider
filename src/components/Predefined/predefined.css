@@ -1,0 +1,19 @@
+.input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.generate-btn{
+  background-color: #0bc135;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.input-container input{
+  padding: 5px;
+  margin-right: 10px;
+}
