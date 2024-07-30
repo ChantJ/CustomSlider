@@ -1,6 +1,6 @@
 import { steps } from "../constants";
 
-const Slider = ({ value, setValue, onChange }) => {
+const Slider = ({ value, onChange, onRelease }) => {
   return (
     <div className="range-container">
       <input
@@ -14,8 +14,8 @@ const Slider = ({ value, setValue, onChange }) => {
             #05c546,
             #049234 ${value}%, #ddd ${value}%)`,
         }}
-        onClick={(e) => onChange(e.target.value)}
-        onChange={(e) => setValue(e.target.value)}
+        onClick={onRelease}
+        onChange={onChange}
       />
       <div className="range-labels">
         {steps.map((label, index) => (

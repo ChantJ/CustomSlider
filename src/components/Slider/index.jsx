@@ -9,7 +9,8 @@ const SliderContainer = ({ positions }) => {
     setValue(positions[0]);
   }, [positions]);
 
-  const onChange = (val) => {
+  const onRelease = (e) => {
+    let val = e.target.value;
     if (positions.includes(val)) setValue(val);
     else {
       let newVal = "0";
@@ -30,7 +31,11 @@ const SliderContainer = ({ positions }) => {
     <div className="slider-container">
       <div>current predefined positions are: {positions.join(", ")}</div>
       <div>current position is: {value}</div>
-      <Slider value={value} setValue={setValue} onChange={onChange} />
+      <Slider
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onRelease={onRelease}
+      />
     </div>
   );
 };
